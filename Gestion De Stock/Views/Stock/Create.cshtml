@@ -1,0 +1,38 @@
+﻿@model Gestion_De_Stock.Models.Stock
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="row">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary ">Create Stock</h2>
+            <hr />
+        </div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProduitId" class="control-label"></label>
+                <select asp-for="ProduitId" class ="form-control" asp-items="ViewBag.ListProduit"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FournisseurId" class="control-label"></label>
+                <select asp-for="FournisseurId" class ="form-control" asp-items="ViewBag.ListFournisseur"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantite" class="control-label"></label>
+                <input asp-for="Quantite" class="form-control" />
+                <span asp-validation-for="Quantite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="ListStock" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
